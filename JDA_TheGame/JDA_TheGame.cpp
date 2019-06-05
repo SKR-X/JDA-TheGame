@@ -1,7 +1,7 @@
 ﻿//------------------------
 // Github: Skrillexazem
 //------------------------
-// Just Die Already! v1.0
+// Just Die Already! v?
 //------------------------
 
 #include <iostream>
