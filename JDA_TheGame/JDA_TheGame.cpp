@@ -21,9 +21,9 @@ public:
 	void intro() {
 		cout << "Version: " + cur_version << endl;
 		cout << "Game: " + GameName << endl;
+		cout << endl;
 	}
 	void start() {
-		cout << endl;
 		cout << "Hi stranger! What is your name?" << endl;
 		cin >> this->playername;
 		cout << endl;
