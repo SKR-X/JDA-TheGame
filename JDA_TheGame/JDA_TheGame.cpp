@@ -74,17 +74,17 @@ public:
 	}
 };
 
-class Quest1 {
-public:
-	float health;
-	void info() {
-		cout << "The monsters level is ";
-		cout << this->health;
-	}
-	void q1(){
-		cout << "Testing";
-	}
-};
+//class Quest1 {
+//public:
+//	float health;
+//	void info() {
+//		cout << "The monsters level is ";
+//		cout << this->health;
+//	}
+//	void q1(){
+//		cout << "Testing";
+//	}
+//};
 
 int main()
 {
