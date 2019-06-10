@@ -1,4 +1,4 @@
-﻿//------------------------
+//------------------------
 // Github: Skrillexazem
 //------------------------
 // Just Die Already! v?
@@ -21,24 +21,31 @@ public:
 	void intro() {
 		cout << "Version: " + cur_version << endl;
 		cout << "Game: " + GameName << endl;
-		cout << endl;
 	}
 	void start() {
-		cout << "Hi stranger! What is your name?" << endl;
+		cout << endl;
+		cout << "- Hi stranger! What is your name?" << endl;
+		cout << endl;
+		cout << " ";
 		cin >> this->playername;
 		cout << endl;
-		cout << "Ok, " + this->playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
+		cout << "- Ok, " + this->playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
+		Sleep(2000);
 		cout << endl;
-		cout << "are you ready to play this game? Y/N" << endl;
+		cout << endl;
+		cout << "- Are you ready to play this game? Y/N" << endl;
+		cout << endl;
+		cout << " ";
 		cin >> this->accept;
 		if (this->accept == "Y" || this->accept == "Yes") {
-			cout << "Okay. Lets begin.";
+			cout << endl;
+			cout << "- Okay. Lets begin.";
 			Sleep(2000);
 			system("cls");
 		}
 		else {
 			cout << endl;
-			cout << "Pathetic.";
+			cout << "- You are pathetic.";
 			Sleep(2000);
 			exit(0);
 		}
@@ -49,15 +56,33 @@ private:
 	int health = 100;
 	int cash = 50;
 	int attempts = 5;
+	float level = 0;
 public:
 	string name;
 	void info() {
-		cout << "Your health is ";
+		cout << "-------------------" << endl;
+		cout << "| Your level is ";
+		cout << this->level;
+		cout << " |" << endl;
+		cout << "-------------------" << endl;
+		cout << "| Your health is ";
 		cout << this->health << endl;
-		cout << "Your cash is ";
+		cout << "| Your cash is ";
 		cout << this->cash << endl;
-		cout << "Your attemps is ";
+		cout << "| Your attemps is ";
 		cout << this->attempts << endl;
+	}
+};
+
+class Quest1 {
+public:
+	float health;
+	void info() {
+		cout << "The monsters level is ";
+		cout << this->health;
+	}
+	void q1(){
+		cout << "Testing";
 	}
 };
 
