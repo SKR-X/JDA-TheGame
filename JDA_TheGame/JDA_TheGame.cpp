@@ -78,7 +78,7 @@ public:
 //public:
 //	float health;
 //	void info() {
-//		cout << "The monsters level is ";
+//		cout << "- The health of this quest is ";
 //		cout << this->health;
 //	}
 //	void q1(){
