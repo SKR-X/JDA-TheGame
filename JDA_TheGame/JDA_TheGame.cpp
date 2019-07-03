@@ -37,7 +37,7 @@ public:
 		cout << endl;
 		cout << " ";
 		cin >> this->accept;
-		if (this->accept == "Y" || this->accept == "Yes") {
+		if (this->accept == "Y" || this->accept == "Yes" || this->accept == "yes") {
 			cout << endl;
 			cout << "- Okay. Lets begin.";
 			Sleep(2000);
@@ -74,7 +74,37 @@ public:
 	}
 };
 
-//скоро обнова залетит
+class Base_Quest {
+private:
+	int questnumber;
+public:
+	Base_Quest(int number) {
+		cout << "Quest number ";
+		this->questnumber = number;
+		cout << questnumber;
+		cout << " has been constructed!" << endl;
+	}
+	~Base_Quest()
+	{
+		cout << "Quest number ";
+		cout << questnumber;
+		cout << " has been destroyed!" << endl;
+	}
+};
+
+class Quest1 : public Base_Quest {
+public:
+	Quest1(int number) : Base_Quest(number) {
+
+	}
+};
+
+class Quest2 : public Base_Quest {
+public:
+	Quest2(int number) : Base_Quest(number) {
+
+	}
+};
 
 int main()
 {
@@ -84,4 +114,6 @@ int main()
 	Game.start();
 	Player.name = Game.playername;
 	Player.info();
+	Quest1 Quest1(1);
+	Quest2 Quest2(2);
 }
