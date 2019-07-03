@@ -13,7 +13,7 @@ using namespace std;
 
 class Game {
 private:
-	string cur_version = "1.0";
+	string cur_version = "?";
 	string GameName = "Just Die Already!";
 public:
 	string answer;
@@ -28,17 +28,17 @@ public:
 		cout << "- Hi stranger! What is your name?" << endl;
 		cout << endl;
 		cout << " ";
-		cin >> playername;
+		cin >> this->playername;
 		cout << endl;
-		cout << "- Ok, " + playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
+		cout << "- Ok, " + this->playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
 		Sleep(2000);
 		cout << endl;
 		cout << endl;
 		cout << "- Are you ready to play this game? Y/N" << endl;
 		cout << endl;
 		cout << " ";
-		cin >> accept;
-		if (accept == "Y" || accept == "Yes" || accept == "yes") {
+		cin >> this->accept;
+		if (this->accept == "Y" || this->accept == "Yes" || this->accept == "yes") {
 			cout << endl;
 			cout << "- Okay. Lets begin.";
 			Sleep(2000);
@@ -52,10 +52,12 @@ public:
 		}
 	}
 	void select_check() {
-		if (answer == "C") {
+		if (this->answer == "C") {
 			exit(0);
 		}
-		else if (answer == "A" || answer == "B") {
+		else if (this->answer == "A" || this->answer == "B") {
+			system("cls");
+			cout << endl;
 			cout << "- this part of the game is in progress...";
 		}
 		else {
@@ -63,7 +65,7 @@ public:
 			cout << "- What? Repeat please..." << endl;
 			cout << endl;
 			cout << " ";
-			cin >> answer;
+			cin >> this->answer;
 			select_check();
 		}
 	}
@@ -78,7 +80,7 @@ public:
 		cout << "Quit = C" << endl;
 		cout << endl;
 		cout << " ";
-		cin >> answer;
+		cin >> this->answer;
 		select_check();
 	}
 };
@@ -93,15 +95,15 @@ public:
 	void info() {
 		cout << "-------------------" << endl;
 		cout << "| Your level is ";
-		cout << level;
+		cout << this->level;
 		cout << " |" << endl;
 		cout << "-------------------" << endl;
 		cout << "| Your health is ";
-		cout << health << endl;
+		cout << this->health << endl;
 		cout << "| Your cash is ";
-		cout << cash << endl;
+		cout << this->cash << endl;
 		cout << "| Your attemps is ";
-		cout << attempts << endl;
+		cout << this->attempts << endl;
 	}
 };
 
@@ -111,14 +113,14 @@ private:
 public:
 	Base_Quest(int number) {
 		cout << "Quest number ";
-		questnumber = number;
-		cout << questnumber;
+		this->questnumber = number;
+		cout << this->questnumber;
 		cout << " has been constructed!" << endl;
 	}
 	~Base_Quest()
 	{
 		cout << "Quest number ";
-		cout << questnumber;
+		cout << this->questnumber;
 		cout << " has been destroyed!" << endl;
 	}
 };
