@@ -16,6 +16,7 @@ private:
 	string cur_version = "1.0";
 	string GameName = "Just Die Already!";
 public:
+	string answer;
 	string playername;
 	string accept;
 	void intro() {
@@ -27,17 +28,17 @@ public:
 		cout << "- Hi stranger! What is your name?" << endl;
 		cout << endl;
 		cout << " ";
-		cin >> this->playername;
+		cin >> playername;
 		cout << endl;
-		cout << "- Ok, " + this->playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
+		cout << "- Ok, " + playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
 		Sleep(2000);
 		cout << endl;
 		cout << endl;
 		cout << "- Are you ready to play this game? Y/N" << endl;
 		cout << endl;
 		cout << " ";
-		cin >> this->accept;
-		if (this->accept == "Y" || this->accept == "Yes" || this->accept == "yes") {
+		cin >> accept;
+		if (accept == "Y" || accept == "Yes" || accept == "yes") {
 			cout << endl;
 			cout << "- Okay. Lets begin.";
 			Sleep(2000);
@@ -49,6 +50,36 @@ public:
 			Sleep(2000);
 			exit(0);
 		}
+	}
+	void select_check() {
+		if (answer == "C") {
+			exit(0);
+		}
+		else if (answer == "A" || answer == "B") {
+			cout << "- this part of the game is in progress...";
+		}
+		else {
+			cout << endl;
+			cout << "- What? Repeat please..." << endl;
+			cout << endl;
+			cout << " ";
+			cin >> answer;
+			select_check();
+		}
+	}
+	void select() {
+		cout << endl;
+		cout << "- Hey, what you gonna do now?" << endl;
+		cout << endl;
+		cout << "------SELECT------" << endl;
+		cout << endl;
+		cout << "Im gonna go to the shop = A" << endl;
+		cout << "Im gonna to do some quests = B" << endl;
+		cout << "Quit = C" << endl;
+		cout << endl;
+		cout << " ";
+		cin >> answer;
+		select_check();
 	}
 };
 class Player {
@@ -94,16 +125,13 @@ public:
 
 class Quest1 : public Base_Quest {
 public:
-	Quest1(int number) : Base_Quest(number) {
-
-	}
+	Quest1(int number) : Base_Quest(number) {}
 };
 
 class Quest2 : public Base_Quest {
 public:
-	Quest2(int number) : Base_Quest(number) {
+	Quest2(int number) : Base_Quest(number) {}
 
-	}
 };
 
 int main()
@@ -114,6 +142,5 @@ int main()
 	Game.start();
 	Player.name = Game.playername;
 	Player.info();
-	Quest1 Quest1(1);
-	Quest2 Quest2(2);
+	Game.select();
 }
