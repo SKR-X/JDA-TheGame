@@ -71,7 +71,8 @@ public:
 	}
 	void select() {
 		cout << endl;
-		cout << "- Hey, what you gonna do now?" << endl;
+		cout << "- " + this->playername;
+		cout << ", what are you going to do now?" << endl;
 		cout << endl;
 		cout << "------SELECT------" << endl;
 		cout << endl;
