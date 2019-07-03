@@ -93,15 +93,15 @@ public:
 	void info() {
 		cout << "-------------------" << endl;
 		cout << "| Your level is ";
-		cout << this->level;
+		cout << level;
 		cout << " |" << endl;
 		cout << "-------------------" << endl;
 		cout << "| Your health is ";
-		cout << this->health << endl;
+		cout << health << endl;
 		cout << "| Your cash is ";
-		cout << this->cash << endl;
+		cout << cash << endl;
 		cout << "| Your attemps is ";
-		cout << this->attempts << endl;
+		cout << attempts << endl;
 	}
 };
 
@@ -111,7 +111,7 @@ private:
 public:
 	Base_Quest(int number) {
 		cout << "Quest number ";
-		this->questnumber = number;
+		questnumber = number;
 		cout << questnumber;
 		cout << " has been constructed!" << endl;
 	}
