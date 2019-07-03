@@ -74,17 +74,7 @@ public:
 	}
 };
 
-//class Quest1 {
-//public:
-//	float health;
-//	void info() {
-//		cout << "- The health of this quest is ";
-//		cout << this->health;
-//	}
-//	void q1(){
-//		cout << "Testing";
-//	}
-//};
+//скоро обнова залетит
 
 int main()
 {
