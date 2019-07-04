@@ -96,6 +96,7 @@ public:
 				this->introducing("Shop");
 			}
 			else {
+				// ъеъ
 			}
 	}
 	bool checked_intro=0;
