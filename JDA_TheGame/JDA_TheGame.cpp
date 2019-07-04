@@ -189,7 +189,7 @@ int main()
 		cout << " Good luck!";
 		Sleep(6000);
 		system("cls");
-		cout << " Bum: Hi stranger! Can you give me some money?" << endl;
+		cout << " - Hi stranger! Can you give me some money?" << endl;
 		cout << " A - \"Okay ( - 5 from cash  )\" " << endl;
 		cout << " B - *Just go away from him*" << endl;
 		cout << " C - \"Hey, go away\" " << endl;
