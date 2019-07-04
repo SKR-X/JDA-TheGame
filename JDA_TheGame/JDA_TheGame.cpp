@@ -99,7 +99,6 @@ public:
 			}
 	}
 	bool checked_intro=0;
-	string firststage;
 	void introducing(string firststage) {
 		this->checked_intro = 1;
 		Sleep(3000);
