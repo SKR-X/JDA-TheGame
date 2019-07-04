@@ -19,7 +19,7 @@ public:
 	string answer;
 	string playername;
 	string accept;
-	bool shop_intro = 0;
+	bool do_something = 0;
 	void intro() {
 		cout << "Version: " + cur_version << endl;
 		cout << "Game: " + GameName << endl;
@@ -90,21 +90,21 @@ public:
 		select_check();
 	}
 	void shop() {
-		if (this->shop_intro == 0) {
 			system("cls");
-			cout << " - Hi stranger! What is your name?" << endl;
-			if (this->check_intro==1) {
+			if (this->checked_intro==0) {
+				cout << " - Hi stranger! Can you give me some money?" << endl;
 				this->introducing("Shop");
 			}
-		}
+			else {
+			}
 	}
-	bool check_intro=1;
-	string stage;
-	void introducing(string stage) {
-		this->check_intro = 0;
+	bool checked_intro=0;
+	string firststage;
+	void introducing(string firststage) {
+		this->checked_intro = 1;
 		Sleep(3000);
 		system("cls");
-		this->stage = stage;
+		this->firststage = firststage;
 	}
 };
 class Player {
@@ -178,8 +178,8 @@ int main()
 	Player.name = Game.playername;
 	Player.info();
 	Game.select();
-	if (Game.stage == "Shop") {
-		Game.stage = "";
+	if (Game.firststage == "Shop") {
+		Game.firststage = "";
 		cout << endl;
 		cout << endl;
 		cout << "  ---TIP TIME!--- " << endl;
