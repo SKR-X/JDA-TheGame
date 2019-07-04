@@ -1,5 +1,5 @@
 //------------------------
-// Github: Skrillexazem
+// Github: SKR-X
 //------------------------
 // Just Die Already! v?
 //------------------------
@@ -19,18 +19,19 @@ public:
 	string answer;
 	string playername;
 	string accept;
+	bool shop_intro = 0;
 	void intro() {
 		cout << "Version: " + cur_version << endl;
 		cout << "Game: " + GameName << endl;
 	}
 	void start() {
 		cout << endl;
-		cout << "- Hi stranger! What is your name?" << endl;
+		cout << " - Hi stranger! What is your name?" << endl;
 		cout << endl;
 		cout << " ";
 		cin >> this->playername;
 		cout << endl;
-		cout << "- Ok, " + this->playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
+		cout << " - Ok, " + this->playername + " this game is about how well do you\nknow the web programming languages!"<<endl;
 		Sleep(2000);
 		cout << endl;
 		cout << endl;
@@ -38,15 +39,15 @@ public:
 		cout << endl;
 		cout << " ";
 		cin >> this->accept;
-		if (this->accept == "Y" || this->accept == "Yes" || this->accept == "yes") {
+		if (this->accept == "Y" || this->accept == "Yes" || this->accept == "yes" || this->accept == "y") {
 			cout << endl;
-			cout << "- Okay. Lets begin.";
+			cout << " - Okay. Lets begin.";
 			Sleep(2000);
 			system("cls");
 		}
 		else {
 			cout << endl;
-			cout << "- You are pathetic.";
+			cout << " - You are pathetic.";
 			Sleep(2000);
 			exit(0);
 		}
@@ -55,14 +56,18 @@ public:
 		if (this->answer == "C") {
 			exit(0);
 		}
-		else if (this->answer == "A" || this->answer == "B") {
+		else if (this->answer == "A") {
 			system("cls");
+			Sleep(2000);
 			cout << endl;
-			cout << "- this part of the game is in progress...";
+			cout << endl;
+			cout << " moving to the shop...";
+			Sleep(3000);
+			this->shop();
 		}
 		else {
 			cout << endl;
-			cout << "- What? Repeat please..." << endl;
+			cout << " - What? Repeat please..." << endl;
 			cout << endl;
 			cout << " ";
 			cin >> this->answer;
@@ -71,40 +76,66 @@ public:
 	}
 	void select() {
 		cout << endl;
-		cout << "- " + this->playername;
+		cout << " - " + this->playername;
 		cout << ", what are you going to do now?" << endl;
 		cout << endl;
-		cout << "------SELECT------" << endl;
+		cout << " ------SELECT------ " << endl;
 		cout << endl;
-		cout << "Im gonna go to the shop = A" << endl;
-		cout << "Im gonna to do some quests = B" << endl;
-		cout << "Quit = C" << endl;
+		cout << " Im gonna go to the shop = A" << endl;
+		cout << " Im gonna to do some quests = B" << endl;
+		cout << " Quit = C" << endl;
 		cout << endl;
 		cout << " ";
 		cin >> this->answer;
 		select_check();
 	}
+	void shop() {
+		if (this->shop_intro == 0) {
+			system("cls");
+			cout << " - Hi stranger! What is your name?" << endl;
+			if (this->check_intro==1) {
+				this->introducing("Shop");
+			}
+		}
+	}
+	bool check_intro=1;
+	string stage;
+	void introducing(string stage) {
+		this->check_intro = 0;
+		Sleep(3000);
+		system("cls");
+		this->stage = stage;
+	}
 };
 class Player {
 private:
+	float status = 0;
 	int health = 100;
 	int cash = 50;
 	int attempts = 5;
 	float level = 0;
 public:
+	string choise;
 	string name;
 	void info() {
-		cout << "-------------------" << endl;
-		cout << "| Your level is ";
+		cout << " -------------------" << endl;
+		cout << " | Your level is ";
 		cout << this->level;
 		cout << " |" << endl;
-		cout << "-------------------" << endl;
-		cout << "| Your health is ";
+		cout << " -------------------" << endl;
+		cout << " | Your health is ";
 		cout << this->health << endl;
-		cout << "| Your cash is ";
+		cout << " | Your cash is ";
 		cout << this->cash << endl;
-		cout << "| Your attemps is ";
+		cout << " | Your attemps is ";
 		cout << this->attempts << endl;
+	}
+	void del_cash(int money) {
+		this->cash = this->cash - money;
+		cout << endl;
+		cout << this->name + "'s cash is ";
+		cout << this->cash<<endl;
+		cout << endl;
 	}
 };
 
@@ -140,10 +171,33 @@ public:
 int main()
 {
 	Player Player;
+	string choise = Player.choise;
 	Game Game;
 	Game.intro();
 	Game.start();
 	Player.name = Game.playername;
 	Player.info();
 	Game.select();
+	if (Game.stage == "Shop") {
+		Game.stage = "";
+		cout << endl;
+		cout << endl;
+		cout << "  ---TIP TIME!--- " << endl;
+		cout << endl;
+		Sleep(1500);
+		cout << " In this game you need to make choices so choose properly!" << endl;
+		cout << " Good luck!";
+		Sleep(6000);
+		system("cls");
+		cout << " - Hi stranger! Can you give me some money?" << endl;
+		cout << " A - \"Okay ( - 5 from cash  )\" " << endl;
+		cout << " B - *Just go away from him*" << endl;
+		cout << " C - \"Hey, go away\" " << endl;
+		cout << endl;
+		cout << " ";
+		cin >> choise;
+		if (choise=="A") {
+			Player.del_cash(5);
+		}
+	}
 }
