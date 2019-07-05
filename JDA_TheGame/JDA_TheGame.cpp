@@ -130,15 +130,15 @@ public:
 		cout << " | Your attemps is ";
 		cout << this->attempts << endl;
 	}
-	void del_cash(int money) {
-		this->cash = this->cash - money;
+	void del_cash(int d_money) {
+		this->cash = this->cash - d_money;
 		cout << endl;
 		cout << this->name + "'s cash is ";
 		cout << this->cash<<endl;
 		cout << endl;
 	}
-		void add_cash(int money1) {
-		this->cash = this->cash - money1;
+		void add_cash(int a_money) {
+		this->cash = this->cash - a_money;
 		cout << endl;
 		cout << this->name + "'s cash is ";
 		cout << this->cash<<endl;
