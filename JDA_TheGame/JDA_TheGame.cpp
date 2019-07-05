@@ -137,6 +137,13 @@ public:
 		cout << this->cash<<endl;
 		cout << endl;
 	}
+		void add_cash(int money1) {
+		this->cash = this->cash - money1;
+		cout << endl;
+		cout << this->name + "'s cash is ";
+		cout << this->cash<<endl;
+		cout << endl;
+	}
 };
 
 class Base_Quest {
