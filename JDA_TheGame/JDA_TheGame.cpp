@@ -137,7 +137,7 @@ public:
 		cout << this->cash<<endl;
 		cout << endl;
 	}
-		void add_cash(int a_money) {
+	void add_cash(int a_money) {
 		this->cash = this->cash - a_money;
 		cout << endl;
 		cout << this->name + "'s cash is ";
