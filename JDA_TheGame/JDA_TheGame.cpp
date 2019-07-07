@@ -137,8 +137,8 @@ public:
 		cout << this->cash<<endl;
 		cout << endl;
 	}
-	void add_cash(int a_money) {
-		this->cash = this->cash - a_money;
+	void add_cash(int money) {
+		this->cash = this->cash - money;
 		cout << endl;
 		cout << this->name + "'s cash is ";
 		cout << this->cash << endl;
@@ -157,8 +157,9 @@ public:
 		this->questnumber = number;
 		cout << this->questnumber;
 		cout << " has been constructed!" << endl;
-	//блеать, как наследовать-то этот деструктор...
-	~Base_Quest()
+	}
+	//как его наследовать блеать
+	virtual ~Base_Quest()
 	{
 		cout << "Quest number ";
 		cout << this->questnumber;
@@ -168,7 +169,7 @@ public:
 
 class Quest1 : public Base_Quest {
 public:
-	Quest1(int number) : Base_Quest(number) {}
+	using Base_Quest::Base_Quest;
 	void question() override{
 		cout << "Not a stock question num1" << endl;
 	}
@@ -176,7 +177,7 @@ public:
 
 class Quest2 : public Base_Quest {
 public:
-	Quest2(int number) : Base_Quest(number) {}
+	using Base_Quest::Base_Quest;
 	void question() override {
 		cout << "Not a stock question num2" << endl;
 	}
