@@ -85,6 +85,7 @@ public:
 	void shop() {
 		system("cls");
 		if (this->checked_intro == 0) {
+			cout<<endl;
 			cout << " - Hi stranger! Can you give me some money?" << endl;
 			this->introducing("Shop");
 		}
