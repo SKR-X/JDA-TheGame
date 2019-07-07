@@ -40,10 +40,5 @@ int main()
 			Player.del_cash(5);
 		}
 	}
-	cout << endl;
-	cout << endl;
-	cout << "Testing." << endl;
-	Quest1 Quest1(1);
-	Quest1.question();
 	return 0;
 }
