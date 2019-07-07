@@ -40,5 +40,6 @@ int main()
 			Player.del_cash(5);
 		}
 	}
+	system("pause");
 	return 0;
 }
