@@ -9,7 +9,6 @@
 
 int main()
 {
-	cout<<"aaaa";
 	Player Player;
 	string choise = Player.choise;
 	Game Game;
