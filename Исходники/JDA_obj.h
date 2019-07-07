@@ -151,7 +151,6 @@ public:
 		cout << this->questnumber;
 		cout << " has been constructed!" << endl;
 	}
-	//как его наследовать блеать
 	virtual ~Base_Quest()
 	{
 		cout << "Quest number ";
