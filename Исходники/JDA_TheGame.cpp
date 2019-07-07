@@ -17,19 +17,9 @@ int main()
 	Player.name = Game.playername;
 	Player.info();
 	cout << endl;
-	cout << "Testing." << endl;
-	Base_Quest Main_Quest(0);
-	Main_Quest.question();
-	Quest1 Quest1(1);
-	Quest1.question();
-	Quest2 Quest2(2);
-	cout << endl;
-	Quest2.question();
 	Game.select();
 	if (Game.firststage == "Shop") {
 		Game.firststage = "";
-		cout << endl;
-		cout << endl;
 		cout << "  ---TIP TIME!--- " << endl;
 		cout << endl;
 		Sleep(1500);
@@ -48,4 +38,10 @@ int main()
 			Player.del_cash(5);
 		}
 	}
+	cout << endl;
+	cout << endl;
+	cout << "Testing." << endl;
+	Quest1 Quest1(1);
+	Quest1.question();
+	cout << endl;
 }
