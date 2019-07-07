@@ -20,6 +20,7 @@ int main()
 	Game.select();
 	if (Game.firststage == "Shop") {
 		Game.firststage = "";
+		cout<<endl;
 		cout << "  ---TIP TIME!--- " << endl;
 		cout << endl;
 		Sleep(1500);
@@ -27,6 +28,7 @@ int main()
 		cout << " Good luck!";
 		Sleep(6000);
 		system("cls");
+		cout<<endl;
 		cout << " - Hi stranger! Can you give me some money?" << endl;
 		cout << " A - \"Okay ( - 5 from cash  )\" " << endl;
 		cout << " B - *Just go away from him*" << endl;
