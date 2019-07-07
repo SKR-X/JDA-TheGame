@@ -151,7 +151,7 @@ public:
 		cout << this->questnumber;
 		cout << " has been constructed!" << endl;
 	}
-	//êàê åãî íàñëåäîâàòü áëåàòü
+	//ĞºĞ°Ğº ĞµĞ³Ğ¾ Ğ½Ğ°ÑĞ»ĞµĞ´Ğ¾Ğ²Ğ°Ñ‚ÑŒ Ğ±Ğ»ĞµĞ°Ñ‚ÑŒ
 	virtual ~Base_Quest()
 	{
 		cout << "Quest number ";
