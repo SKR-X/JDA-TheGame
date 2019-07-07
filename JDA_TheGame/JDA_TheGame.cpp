@@ -19,6 +19,7 @@ public:
 	string answer;
 	string playername;
 	string accept;
+	bool do_something = 0;
 	void intro() {
 		cout << "Version: " + cur_version << endl;
 		cout << "Game: " + GameName << endl;
@@ -95,10 +96,10 @@ public:
 				this->introducing("Shop");
 			}
 			else {
-				// ъеъ
 			}
 	}
 	bool checked_intro=0;
+	string firststage;
 	void introducing(string firststage) {
 		this->checked_intro = 1;
 		Sleep(3000);
@@ -129,8 +130,8 @@ public:
 		cout << " | Your attemps is ";
 		cout << this->attempts << endl;
 	}
-	void del_cash(int d_money) {
-		this->cash = this->cash - d_money;
+	void del_cash(int money) {
+		this->cash = this->cash - money;
 		cout << endl;
 		cout << this->name + "'s cash is ";
 		cout << this->cash<<endl;
@@ -140,22 +141,24 @@ public:
 		this->cash = this->cash - a_money;
 		cout << endl;
 		cout << this->name + "'s cash is ";
-		cout << this->cash<<endl;
+		cout << this->cash << endl;
 		cout << endl;
 	}
 };
 
 class Base_Quest {
-private:
-	int questnumber;
 public:
+	int questnumber;
+	virtual void question() {
+		cout << "Stock Question"<<endl;
+	}
 	Base_Quest(int number) {
 		cout << "Quest number ";
 		this->questnumber = number;
 		cout << this->questnumber;
 		cout << " has been constructed!" << endl;
-	}
-	~Base_Quest()
+	//блеать, как наследовать-то этот деструктор...
+	virtual ~Base_Quest()
 	{
 		cout << "Quest number ";
 		cout << this->questnumber;
@@ -166,14 +169,18 @@ public:
 class Quest1 : public Base_Quest {
 public:
 	Quest1(int number) : Base_Quest(number) {}
+	void question() override{
+		cout << "Not a stock question num1" << endl;
+	}
 };
 
 class Quest2 : public Base_Quest {
 public:
 	Quest2(int number) : Base_Quest(number) {}
-
+	void question() override {
+		cout << "Not a stock question num2" << endl;
+	}
 };
-
 int main()
 {
 	Player Player;
@@ -183,6 +190,15 @@ int main()
 	Game.start();
 	Player.name = Game.playername;
 	Player.info();
+	cout << endl;
+	cout << "Testing." << endl;
+	Base_Quest Main_Quest(0);
+	Main_Quest.question();
+	Quest1 Quest1(1);
+	Quest1.question();
+	Quest2 Quest2(2);
+	cout << endl;
+	Quest2.question();
 	Game.select();
 	if (Game.firststage == "Shop") {
 		Game.firststage = "";
