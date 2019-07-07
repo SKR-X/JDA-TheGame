@@ -152,7 +152,7 @@ public:
 		cout << this->questnumber;
 		cout << " has been constructed!" << endl;
 	}
-	virtual ~Base_Quest()
+	~Base_Quest()
 	{
 		cout << "Quest number ";
 		cout << this->questnumber;
