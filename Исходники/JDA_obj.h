@@ -12,7 +12,6 @@ public:
 	string answer;
 	string playername;
 	string accept;
-	bool do_something = 0;
 	void intro() {
 		cout << "Version: " + cur_version << endl;
 		cout << "Game: " + GameName << endl;
