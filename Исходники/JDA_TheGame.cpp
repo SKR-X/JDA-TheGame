@@ -15,6 +15,7 @@ int main()
 	Game.intro();
 	Game.start();
 	Player.name = Game.playername;
+	cout << endl;
 	Player.info();
 	cout << endl;
 	Game.select();
