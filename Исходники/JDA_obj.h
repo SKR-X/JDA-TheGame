@@ -7,16 +7,16 @@ using namespace std;
 class Game
 {
 private:
-  string cur_version = "?";
-  string GameName = "Just Die Already!";
+  string curVersion = "?";
+  string gameName = "Just Die Already!";
 public:
     string answer;
-  string playername;
+  string playerName;
   string accept;
   void intro ()
   {
-    cout << "Version: " + cur_version << endl;
-    cout << "Game: " + GameName << endl;
+    cout << "Version: " + curVersion << endl;
+    cout << "Game: " + gameName << endl;
   }
   void start ()
   {
@@ -24,9 +24,9 @@ public:
     cout << " - Hi stranger! What is your name?" << endl;
     cout << endl;
     cout << " ";
-    cin >> this->playername;
+    cin >> this->playerName;
     cout << endl;
-    cout << " - Ok, " + this->playername +
+    cout << " - Ok, " + this->playerName +
       " this game is about how well do you\nknow the web programming languages!"
       << endl;
     Sleep (2000);
@@ -81,7 +81,7 @@ public:
   void select ()
   {
     cout << endl;
-    cout << " - " + this->playername;
+    cout << " - " + this->playerName;
     cout << ", what are you going to do now?" << endl;
     cout << endl;
     cout << " ------SELECT------ " << endl;
