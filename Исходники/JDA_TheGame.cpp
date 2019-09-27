@@ -4,7 +4,7 @@
 // Just Die Already! v?
 //------------------------
 
-#include "JDA_obj.h";
+#include "JDA_classes.h";
 
 
 int
