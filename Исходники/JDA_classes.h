@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// В скором времени постараюсь перенести класс Game на статику.
+
 class Game
 {
 private:
